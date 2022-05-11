@@ -1,0 +1,15 @@
+1.SELECT *
+  FROM `students`
+  WHERE `degree_id` = 53;
+
+2.SELECT `degrees`.`name` AS 'nome_corso',  `degrees`.`id` AS 'id_corso',  `degrees`.`level`, `departments`.`name`,`departments`.`id` AS 'id_dipartimento'
+  FROM `degrees`
+  INNER JOIN `departments` ON `degrees`.`department_id` = `departments`.`id`
+  WHERE `department_id` = 7
+  AND `level` = 'Magistrale';
+
+3.SELECT `courses`.`id`,`courses`.`name` AS 'nome_corso',`teachers`.`name`,`teachers`.`surname`
+  FROM `course_teacher`
+  INNER JOIN `courses` ON `course_teacher`.`course_id` = `courses`.`id`
+  INNER JOIN `teachers`ON `course_teacher`.`teacher_id` = `teachers`.`id`
+  WHERE `teachers`.`id`= 44
